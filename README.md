@@ -214,9 +214,44 @@ Utilitza una declaració if per comprovar si el preu és menor o igual a MAX_PRI
 
 Prova la teva funció cridant-la amb diferents valors per al preu i la quantitat, i assegura't que retorni el resultat correcte o el missatge d'error.
 
-#### Exercici 5.4 -
-
 ### Exercici 6: Funcions - Arrow Functions
+
+!!! info Arrow Functions
+
+      **Variant sense Corxetes:** Les funcions de flecha sense corxetes són útils per a operacions senzilles. El seu format és el següent:
+
+      ```javascript
+      (...arguments) => expressió
+      ```
+
+      En aquest cas, el costat dret de la fletxa (`=>`) és una expressió i la funció avalua aquesta expressió i en retorna el resultat. Si només hi ha un argument, pots omitir els parèntesis. Exemple:
+
+      ```javascript
+      const duplica = n => n * 2;
+      console.log(duplica(5)); // Hauria de mostrar 10
+      ```
+
+      **Variant amb Claus:**
+
+      Les funcions de flecha amb claus són més adequades per a tasques que involucren més de una operació. El seu format és el següent:
+
+      ```javascript
+      (...arguments) => { bloc de codi }
+      ```
+
+      En aquest cas, pots escriure diverses declaracions dins del bloc de codi i, si vols retornar un valor, cal que utilitzis la paraula clau `return`.Exemple:
+
+      ```javascript
+      const sumaNombres = (nombres) => {
+      let suma = 0;
+      for (const nombre of nombres) {
+         suma += nombre;
+      }
+      return suma;
+      };
+
+      console.log(sumaNombres([1, 2, 3, 4, 5])); // Hauria de mostrar 15
+      ```
 
 Passa aquestes funcions a **Arrow Functions**.
 
@@ -301,3 +336,134 @@ myObject.myMethod();
 ```
 
 Ara, fes el mateix però fent servir Arrow Functions. Què passa ara?
+
+### Exercici 7: Funcions - Mètodes d'Objectes per defecte
+
+No t'has preguntat com es que podem aplicar mètodes a alguns primitius, per exemple str.toUpperCase()? Abans de començar a fer aquest exercici, pots fer un cop d'ull al recurs: https://es.javascript.info/object-methods, si vols entendre que s'amaga darrera d'aquest comportament.
+
+A continuació executa els següents codis i entendre que fan en cada cas.
+
+```javascript
+const str = '42';
+const num = Number(str);
+console.log(num);
+
+//--------------------------
+
+const randomNum = Math.floor(Math.random() * 10) + 1;
+console.log(randomNum);
+
+//--------------------------
+
+const obj = { name: 'John', age: 30 };
+const jsonStr = JSON.stringify(obj);
+console.log(jsonStr);
+
+//--------------------------
+
+const obj = { name: 'John', age: 30 };
+const jsonStr = JSON.stringify(obj);
+console.log(jsonStr);
+
+//--------------------------
+
+const num = 42;
+const str = String(num);
+console.log(str);
+
+//--------------------------
+
+const now = new Date();
+const dateStr = now.toLocaleDateString('ca-ES');
+const timeStr = now.toLocaleTimeString('ca-ES');
+console.log(dateStr);
+console.log(timeStr);
+```
+
+### Exercici 8: Rest i operador Spread
+
+Existeixen dos operadors que ens poden ajudar a treballar amb arrays i objectes. L'operador **Rest** i l'operador **Spread**.
+
+L'operador de propagació (...) és una característica de JavaScript que permet expandir una expressió en lloc on es requereixen múltiples arguments o elements. Això pot ser útil per passar arguments a una funció, crear noves arrays o objectes, o combinar múltiples arrays o objectes.
+
+- Exemple 1: Passar arguments a una funció
+
+```javascript
+function sum(a, b, c) {
+  return a + b + c;
+}
+
+const numbers = [1, 2, 3];
+
+const result = sum(...numbers);
+
+console.log(result); // Output: 6
+```
+
+- Exemple 2: Crear una nova array
+
+```javascript
+const numbers1 = [1, 2, 3];
+const numbers2 = [4, 5, 6];
+
+const combinedNumbers = [...numbers1, ...numbers2];
+
+console.log(combinedNumbers); // Output: [1, 2, 3, 4, 5, 6]
+```
+
+- Exemple 3: Crear un nou objecte
+
+```javascript
+const person = { name: 'John', age: 30 };
+const address = { city: 'Barcelona', country: 'Spain' };
+
+const personWithAddress = { ...person, ...address };
+
+console.log(personWithAddress); // Output: { name: 'John', age: 30, city: 'Barcelona', country: 'Spain' }
+```
+
+El Rest Operator és una característica de JavaScript que ens permet representar un nombre indefinit de paràmetres com un array. Això pot ser útil per passar arguments a una funció, o per desestructurar un array.
+
+- Exemple 1: Passar arguments a una funció
+
+```javascript
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+
+const result = sum(1, 2, 3, 4, 5);
+
+console.log(result); // Output: 15
+```
+
+- Exemple 2: Desestructurar un array
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+const [first, second, ...others] = numbers;
+
+console.log(first); // Output: 1
+console.log(second); // Output: 2
+console.log(others); // Output: [3, 4, 5]
+```
+
+- Exemple 3: Desestructurar un objecte
+
+```javascript
+const person = { name: 'John', age: 30, city: 'Barcelona', country: 'Spain' };
+
+const { name, age, ...address } = person;
+
+console.log(name); // Output: John
+console.log(age); // Output: 30
+console.log(address); // Output: { city: 'Barcelona', country: 'Spain' }
+```
+
+#### Prova-ho tu mateix
+
+1. Crea una funció que accepti un nombre variable d'arguments utilitzant el "rest operator". La funció ha de sumar tots els arguments i retornar el resultat.
+
+2. Crea una altra funció que accepti una array d'arguments utilitzant l'operador de propagació. La funció ha de sumar tots els elements de l'array i retornar el resultat.
+
+3. Crida les dues funcions amb els mateixos arguments i comprova que els resultats són iguals.
