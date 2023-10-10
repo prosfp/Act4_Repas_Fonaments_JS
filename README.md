@@ -20,7 +20,7 @@ Durant molt de temps, JavaScript va evolucionar sense tenir problemes de compati
 
 Busca com està afectant 'use strict' en cada cas:
 
-- Exemple 1
+#### Exemple 1
 
 ```javascript
 function myFunction() {
@@ -30,7 +30,7 @@ function myFunction() {
 }
 ```
 
-- Exemple 2
+#### Exemple 2
 
 ```javascript
 function myFunction() {
@@ -92,7 +92,7 @@ D'altra banda, la majoria de vegades, els operadors i funcions converteixen auto
 
 Ara bé, a vegades ens pot anar bé poder fer nosaltres mateixos la conversió. Fes un cop d'ull al següent recurs si ho necessites https://es.javascript.info/type-conversions i afegeix les conversions necessàries per realitzar els següents exercicis:
 
-- Exercici 3.1:
+#### Exercici 3.1:
 
 ```javascript
 // Codi inicial
@@ -104,8 +104,9 @@ let resultat = num1 + num2;
 alert('El resultat de la suma és: ' + resultat);
 ```
 
-- Exercici 3.2:
-  Realitza un petit codi que demani a l'usuari un número i mostri a través d'un alert si l'usuari ha introud ït un número parell o senar.
+#### Exercici 3.2:
+
+Realitza un petit codi que demani a l'usuari un número i mostri a través d'un alert si l'usuari ha introud ït un número parell o senar.
 
 ```javascript
 let entrada = prompt('Introdueix un número entre 1 i 100:');
@@ -167,6 +168,136 @@ d = '5' > '15';
 
       En altres paraules, l'operador "??" retorna el primer argument quan aquest no és null ni undefined. En cas contrari, retorna el segon argument. https://es.javascript.info/nullish-coalescing-operator
 
-4. Suposem que tenim una variable "preu" que pot ser null o undefined. Utilitza l'operador "??" per assignar-li un valor predeterminat de 0 si "preu" no està definit, o bé manté el seu valor actual si està definit. Escribe el codi JavaScript per aquesta tasca utilitzant l'operador "??".
+4. Suposem que tenim tres variables per guardar els nom, el cognom i el "nickname" d'un usuari. Ara bé, no estem segurs que tinguem tota aquesta informació. Només sabem que com a mínim en tenim una d'aquestes i que volem mostrar a alerta seguint la següent prioritat:
+   nom --> cognom --> nickName --> 'anònim'
+   Escriu el codi que ens ho soluciona fent ús de "??".
 
-### Exercici 5: Condicionals - Switch
+### Exercici 5: Funcions - Fonaments
+
+#### Exercici 5.1
+
+```javascript
+function checkAge(age) {
+  if (age > 18) {
+    return true;
+  } else {
+    // ...
+    return confirm('¿Tus padres te permitieron?');
+  }
+}
+```
+
+Funcionarà el codi si borrem `else`? Per què?
+
+#### Exercici 5.2
+
+```javascript
+function checkAge(age) {
+  if (age > 18) {
+    return true;
+  } else {
+    return confirm('¿Tienes permiso de tus padres?');
+  }
+}
+```
+
+Escriu la funció de dalt, però aquest cop fent servir un operador `?`.
+També ho podem fer fent servir l'operador `||`. Inclus més curt. Investiga com fer-ho.
+
+#### Exercici 5.3 - Variables globals i locals
+
+Declara una variable global anomenada MAX_PRICE i establix el seu valor a 10.
+
+Defineix la funció calculaTotal. Dins de la funció, declara una variable local anomenada total i establix el seu valor com a preu \* quantitat.
+
+Utilitza una declaració if per comprovar si el preu és menor o igual a MAX_PRICE. Si ho és, retorna el valor de total. Si no ho és, retorna un missatge d'error.
+
+Prova la teva funció cridant-la amb diferents valors per al preu i la quantitat, i assegura't que retorni el resultat correcte o el missatge d'error.
+
+#### Exercici 5.4 -
+
+### Exercici 6: Funcions - Arrow Functions
+
+Passa aquestes funcions a **Arrow Functions**.
+
+```javascript
+// Function to arrow function
+function multiply(a, b) {
+  const result = a * b;
+  return result;
+}
+```
+
+```javascript
+// Function to arrow function
+function calculateTotal(price, quantity) {
+  let total = price * quantity;
+
+  if (price > 10) {
+    total = total * 0.9;
+  }
+
+  return total;
+}
+```
+
+```javascript
+function outerFunction(a, b) {
+  function innerFunction(c, d) {
+    return c * d;
+  }
+
+  let result = innerFunction(a, b);
+  return result + 10;
+}
+```
+
+```javascript
+// Function to arrow function
+function calculateTotal(price, quantity) {
+  let total = price * quantity;
+
+  if (price > 10) {
+    total = total * 0.9;
+  }
+
+  return total;
+}
+```
+
+```javascript
+function outerFunction(a, b) {
+  function innerFunction(c, d) {
+    return c * d;
+  }
+
+  let result = innerFunction(a, b);
+  return result + 10;
+}
+```
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+// Callback function to arrow function
+const doubledNumbers = numbers.map(function (number) {
+  return number * 2;
+});
+```
+
+Fes un cop d'ull al segúent codi. Què passa quan l'executes?
+
+```javascript
+const myObject = {
+  myMethod: function () {
+    console.log(this); // Output: myObject
+    setTimeout(function () {
+      console.log(this); // Output: Window
+    }, 1000);
+  },
+};
+
+myObject.myMethod();
+```
+
+Ara, fes el mateix però fent servir Arrow Functions. Què passa ara?
