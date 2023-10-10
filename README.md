@@ -121,3 +121,154 @@ Aquí tens les solucions per als exercicis de conversió de codi amb `if...else 
    ```
 
 Aquestes solucions utilitzen expressions ternàries per aconseguir el mateix resultat que les declaracions `if...else if` dels exercicis originals. Això demostra com pots simplificar i fer més llegible el teu codi en situacions senzilles com aquestes utilitzant expressions ternàries.
+
+### Exercici 5: Funcions - Fonaments
+
+#### Exercici 5.1
+
+```javascript
+function checkAge(age) {
+  if (age > 18) {
+    return true;
+  } else {
+    // ...
+    return confirm('¿Tus padres te permitieron?');
+  }
+}
+```
+
+Funcionarà el codi si borrem `else`? Per què?
+
+#### Exercici 5.2
+
+```javascript
+function checkAge(age) {
+  if (age > 18) {
+    return true;
+  } else {
+    return confirm('¿Tienes permiso de tus padres?');
+  }
+}
+```
+
+Escriu la funció de dalt, però aquest cop fent servir un operador `?`.
+També ho podem fer fent servir l'operador `||`. Inclus més curt. Investiga com fer-ho.
+
+```javascript
+function checkAge(age) {
+  return age > 18 ? true : confirm('¿Tus padres te lo permitieron?');
+}
+```
+
+```javascript
+function checkAge(age) {
+  return age > 18 || confirm('¿Tus padres te lo permitieron?');
+}
+```
+
+#### Exercici 5.3 - Variables globals i locals
+
+```javascript
+let MAX_PRICE = 10;
+
+function calculaTotal(preu, quantitat) {
+  let total = preu * quantitat;
+
+  if (preu <= MAX_PRICE) {
+    return total;
+  } else {
+    return 'Error: El preu és més gran que el preu màxim permès.';
+  }
+}
+```
+
+console.log(calculaTotal(5, 2)); // Output: 10
+console.log(calculaTotal(12, 3)); // Output: "Error: El preu és més gran que el preu màxim permès."
+
+#### Exercici 5.4 -
+
+### Exercici 6: Funcions - Arrow Functions
+
+Passa aquestes funcions a **Arrow Functions**.
+
+```javascript
+// Function to arrow function
+function multiply(a, b) {
+  const result = a * b;
+  return result;
+}
+```
+
+```javascript
+// Function to arrow function
+function calculateTotal(price, quantity) {
+  let total = price * quantity;
+
+  if (price > 10) {
+    total = total * 0.9;
+  }
+
+  return total;
+}
+```
+
+```javascript
+function outerFunction(a, b) {
+  function innerFunction(c, d) {
+    return c * d;
+  }
+
+  let result = innerFunction(a, b);
+  return result + 10;
+}
+```
+
+```javascript
+// Function to arrow function
+function calculateTotal(price, quantity) {
+  let total = price * quantity;
+
+  if (price > 10) {
+    total = total * 0.9;
+  }
+
+  return total;
+}
+```
+
+```javascript
+function outerFunction(a, b) {
+  function innerFunction(c, d) {
+    return c * d;
+  }
+
+  let result = innerFunction(a, b);
+  return result + 10;
+}
+```
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+// Callback function to arrow function
+const doubledNumbers = numbers.map(function (number) {
+  return number * 2;
+});
+```
+
+Fes un cop d'ull al segúent codi. Què passa quan l'executes?
+
+```javascript
+const myObject = {
+  myMethod: function () {
+    console.log(this); // Output: myObject
+    setTimeout(function () {
+      console.log(this); // Output: Window
+    }, 1000);
+  },
+};
+
+myObject.myMethod();
+```
+
+Ara, fes el mateix però fent servir Arrow Functions. Què passa ara?
