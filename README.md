@@ -129,3 +129,32 @@ b = 5 > '15';
 c = '15' > '5';
 d = '5' > '15';
 ```
+
+### Exercici 4: Condicionals - Ternaris
+
+1. **Convertir IF a Ternari:**
+
+   Transforma el següent codi d'ús de `if...else if` a una expressió ternària:
+
+   ```javascript
+   let hour = 12;
+   let greeting;
+
+   if (hour < 12) {
+     greeting = 'Bon dia';
+   } else if (hour < 18) {
+     greeting = 'Bona tarda';
+   } else {
+     greeting = 'Bona nit';
+   }
+   ```
+
+   La teva tasca és reescriure aquest codi utilitzant una expressió ternària i assignar el resultat a la variable `greeting`.
+
+2. **Classificar el Número:**
+
+   Tens un número `num` i vols assignar la cadena 'Positiu' si és positiu, 'Negatiu' si és negatiu, i 'Zero' si és igual a zero. Utilitza una expressió ternària per aconseguir-ho.
+
+3. **Classificar l'Edat:**
+
+   Donada una edat, vols assignar una etiqueta que indiqui si és un "Nen", "Adolescent" o "Adult". Utilitza una expressió ternària per aconseguir-ho.
