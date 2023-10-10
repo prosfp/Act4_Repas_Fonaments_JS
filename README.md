@@ -52,16 +52,16 @@ Podem declarar variables per emmagatzemar dades utilitzant les paraules clau **v
 Ja sabem prou com funcionen però està bé que coneguem algunes bones pràctiques. Fes un cop d'ull al següent recurs: https://es.javascript.info/variables i digues si la segÜent manera de declarar variables és correcta o no:
 
 ```javascript
-let message; (Correcte)
-const COLOR_RED = "#F00"; (Correcte)
+let message;
+const COLOR_RED = "#F00";
 const pageLoadTime = /* el temps que ha trigat a carregar la pàgina */
-const myBirthday = '18.04.1982'; (Correcte)
-let 1a; (Incorrecte)
-let user = 'John', age = 25, message = 'Hola'; (Correcte)
-let my-name; (Incorrecte)
-var mensaje = 'Hola'; (Acceptable)
-const BIRTHDAY = '18.04.1982'; (Correcte)
-let num = 5; (Correcte)
+const myBirthday = '18.04.1982';
+let 1a;
+let user = 'John', age = 25, message = 'Hola';
+let my-name;
+var mensaje = 'Hola';
+const BIRTHDAY = '18.04.1982';
+let num = 5;
 ```
 
 ### Exercici 3: Nivell de dificultat alt
