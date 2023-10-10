@@ -299,3 +299,24 @@ const myObject = {
   },
 };
 ```
+
+### Exercici 8
+
+```javascript
+function sumWithRest(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+
+function sumWithSpread(numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+
+const numbers = [1, 2, 3, 4, 5];
+
+const result1 = sumWithRest(1, 2, 3, 4, 5);
+const result2 = sumWithSpread([...numbers]);
+
+console.log(result1); // Output: 15
+console.log(result2); // Output: 15
+``;
+```
