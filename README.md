@@ -110,4 +110,14 @@ Aquí tens les solucions per als exercicis de conversió de codi amb `if...else 
    let label = age < 13 ? 'Nen' : age < 20 ? 'Adolescent' : 'Adult';
    ```
 
+4. **Nullish coalescing operator:**
+
+   ```javascript
+   let firstName = null;
+   let lastName = null;
+   let nickName = 'Supercoder';
+   // mostra el primer nom no nul·l
+   alert(firstName ?? lastName ?? nickName ?? 'Anonymous'); // Supercoder
+   ```
+
 Aquestes solucions utilitzen expressions ternàries per aconseguir el mateix resultat que les declaracions `if...else if` dels exercicis originals. Això demostra com pots simplificar i fer més llegible el teu codi en situacions senzilles com aquestes utilitzant expressions ternàries.
