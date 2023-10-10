@@ -66,4 +66,21 @@ let num = 5; (Correcte)
 
 ### Exercici 3: Nivell de dificultat alt
 
-Descripció de l'exercici 3.
+Aquests són els resultats de les operacions que has proporcionat:
+
+```javascript
+let a, b, c, d;
+a = '5' + 5; // "55" (string)
+b = 5 + '5'; // "55" (string)
+c = '5' - 5; // 0    (number)
+d = '5' * '5'; // 25   (number)
+
+a = '15' > 5; // true     15 > 5
+b = 5 > '15'; // false     5 > 15
+c = '15' > '5'; // false    "15" no és major que "5" en comparacions de cadena
+d = '5' > '15'; // true    "5" és major que "15" en comparacions de cadena
+```
+
+Els resultats es deriven de les regles de JavaScript per a les operacions entre cadenes i números, així com de les comparacions de cadenes. Per a les operacions d'addició (`+`), qualsevol operand de tipus cadena es converteix en cadena i es realitza una concatenació. Per a les operacions de resta (`-`) i multiplicació (`*`), JavaScript intenta convertir les cadenes en números, i si és possible, realitza l'operació numèrica.
+
+En les comparacions entre cadenes, JavaScript compara els valors llexicogràficament. En el cas de `"15" > "5"`, les cadenes es comparen caràcter a caràcter i `"5"` és major que `"15"` en aquesta comparació, ja que el caràcter `"5"` és major que el caràcter `"1"`.
