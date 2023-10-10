@@ -20,7 +20,7 @@ Durant molt de temps, JavaScript va evolucionar sense tenir problemes de compati
 
 Busca com està afectant 'use strict' en cada cas:
 
-- Exemple 1
+#### Exemple 1
 
 ```javascript
 function myFunction() {
@@ -30,7 +30,7 @@ function myFunction() {
 }
 ```
 
-- Exemple 2
+#### Exemple 2
 
 ```javascript
 function myFunction() {
@@ -52,75 +52,125 @@ Podem declarar variables per emmagatzemar dades utilitzant les paraules clau **v
 Ja sabem prou com funcionen però està bé que coneguem algunes bones pràctiques. Fes un cop d'ull al següent recurs: https://es.javascript.info/variables i digues si la segÜent manera de declarar variables és correcta o no:
 
 ```javascript
-let message; (Correcte)
-const COLOR_RED = "#F00"; (Correcte)
+let message;
+const COLOR_RED = "#F00";
 const pageLoadTime = /* el temps que ha trigat a carregar la pàgina */
-const myBirthday = '18.04.1982'; (Correcte)
-let 1a; (Incorrecte)
-let user = 'John', age = 25, message = 'Hola'; (Correcte)
-let my-name; (Incorrecte)
-var mensaje = 'Hola'; (Acceptable)
-const BIRTHDAY = '18.04.1982'; (Correcte)
-let num = 5; (Correcte)
+const myBirthday = '18.04.1982';
+let 1a;
+let user = 'John', age = 25, message = 'Hola';
+let my-name;
+var mensaje = 'Hola';
+const BIRTHDAY = '18.04.1982';
+let num = 5;
 ```
 
-### Exercici 3: Nivell de dificultat alt
+### Exercici 3: Conversions de Tipus
 
-Aquests són els resultats de les operacions que has proporcionat:
+Ara ja coneixem els diferents tipus de dades que podem utilitzar a JS. Tenim un total de 8 tipus bàsics:
+
+**7 tipus de dades primitius**:
+
+- **number** per a números de qualsevol tipus: enteros o de punt flotant, els enters estan limitats per ±(253-1).
+- **bigint** per a números enters de longitud arbitrària.
+- **string** per a cadenes. Una cadena pot tenir zero o més caràcters, no hi ha un tipus especial per a un únic caràcter.
+- **boolean** per a vertader i fals: true/false.
+- **null** per a valors desconeguts – un tipus independent que té un sol valor nul: null.
+- **undefined** per a valors no assignats – un tipus independent que té un únic valor "indefinit": undefined.
+- **symbol** per a identificadors únics.
+
+**1 un tipus de dada no primitiu**
+
+- **object** per a estructures de dades complexes.
+
+L'operador `typeof` ens permet veure quin tipus està emmagatzemat en una variable.
+
+Hi ha dues formes: `typeof x` o `typeof(x)`. Retorna una cadena amb el nom del tipus. Per exemple, "string".
+
+!!! Warning Pel valor `null`, retorna "object": això és un error en el llenguatge, en realitat no és un objecte.
+
+D'altra banda, la majoria de vegades, els operadors i funcions converteixen automàticament els valors que els passen al tipus correcte. Això ho anomenem "Conversió de tipus". Per exemple `alert` fa la conversió de qualssevol valor a string per mostrar-ho. O els operadors aritmètics converteixen els valors a números.
+
+Ara bé, a vegades ens pot anar bé poder fer nosaltres mateixos la conversió. Fes un cop d'ull al següent recurs si ho necessites https://es.javascript.info/type-conversions i afegeix les conversions necessàries per realitzar els següents exercicis:
+
+#### Exercici 3.1:
+
+```javascript
+// Codi inicial
+let num1 = prompt('Introdueix el primer número:');
+let num2 = prompt('Introdueix el segon número:');
+
+let resultat = num1 + num2;
+
+alert('El resultat de la suma és: ' + resultat);
+```
+
+#### Exercici 3.2:
+
+Realitza un petit codi que demani a l'usuari un número i mostri a través d'un alert si l'usuari ha introud ït un número parell o senar.
+
+```javascript
+let entrada = prompt('Introdueix un número entre 1 i 100:');
+//...
+```
+
+- Exercici 3.3:
+  A vegades hi ha comportaments que no son del tot "lògics". Fes un cop d'ull als següents exemples, prova'ls i intenta extreure'n conclusions del funcionament de JS:
 
 ```javascript
 let a, b, c, d;
-a = '5' + 5; // "55" (string)
-b = 5 + '5'; // "55" (string)
-c = '5' - 5; // 0    (number)
-d = '5' * '5'; // 25   (number)
-
-a = '15' > 5; // true     15 > 5
-b = 5 > '15'; // false     5 > 15
-c = '15' > '5'; // false    "15" no és major que "5" en comparacions de cadena
-d = '5' > '15'; // true    "5" és major que "15" en comparacions de cadena
+a = '5' + 5;
+b = 5 + '5';
+c = '5' - 5;
+d = '5' * '5';
 ```
 
-Els resultats es deriven de les regles de JavaScript per a les operacions entre cadenes i números, així com de les comparacions de cadenes. Per a les operacions d'addició (`+`), qualsevol operand de tipus cadena es converteix en cadena i es realitza una concatenació. Per a les operacions de resta (`-`) i multiplicació (`*`), JavaScript intenta convertir les cadenes en números, i si és possible, realitza l'operació numèrica.
-
-En les comparacions entre cadenes, JavaScript compara els valors llexicogràficament. En el cas de `"15" > "5"`, les cadenes es comparen caràcter a caràcter i `"5"` és major que `"15"` en aquesta comparació, ja que el caràcter `"5"` és major que el caràcter `"1"`.
+```javascript
+a = '15' > 5;
+b = 5 > '15';
+c = '15' > '5';
+d = '5' > '15';
+```
 
 ### Exercici 4: Condicionals - Ternaris
 
-Aquí tens les solucions per als exercicis de conversió de codi amb `if...else if` a expressions ternàries:
-
 1. **Convertir IF a Ternari:**
+
+   Transforma el següent codi d'ús de `if...else if` a una expressió ternària:
 
    ```javascript
    let hour = 12;
-   let greeting = hour < 12 ? 'Bon dia' : hour < 18 ? 'Bona tarda' : 'Bona nit';
+   let greeting;
+
+   if (hour < 12) {
+     greeting = 'Bon dia';
+   } else if (hour < 18) {
+     greeting = 'Bona tarda';
+   } else {
+     greeting = 'Bona nit';
+   }
    ```
+
+   La teva tasca és reescriure aquest codi utilitzant una expressió ternària i assignar el resultat a la variable `greeting`.
 
 2. **Classificar el Número:**
 
-   ```javascript
-   let num = -5;
-   let result = num > 0 ? 'Positiu' : num < 0 ? 'Negatiu' : 'Zero';
-   ```
+   Tens un número `num` i vols assignar la cadena 'Positiu' si és positiu, 'Negatiu' si és negatiu, i 'Zero' si és igual a zero. Utilitza una expressió ternària per aconseguir-ho.
 
 3. **Classificar l'Edat:**
 
-   ```javascript
-   let age = 25;
-   let label = age < 13 ? 'Nen' : age < 20 ? 'Adolescent' : 'Adult';
-   ```
+   Donada una edat, vols assignar una etiqueta que indiqui si és un "Nen", "Adolescent" o "Adult". Utilitza una expressió ternària per aconseguir-ho.
 
-4. **Nullish coalescing operator:**
+!!! Info Operador Nullish Coalescing '??'
 
-   ```javascript
-   let firstName = null;
-   let lastName = null;
-   let nickName = 'Supercoder';
-   // mostra el primer nom no nul·l
-   alert(firstName ?? lastName ?? nickName ?? 'Anonymous'); // Supercoder
-   ```
+      El resultat de l'expressió "a ?? b" és el següent:
+      - Si "a" està "definit", el resultat serà "a".
+      - Si "a" no està "definit", el resultat serà "b".
 
-Aquestes solucions utilitzen expressions ternàries per aconseguir el mateix resultat que les declaracions `if...else if` dels exercicis originals. Això demostra com pots simplificar i fer més llegible el teu codi en situacions senzilles com aquestes utilitzant expressions ternàries.
+      En altres paraules, l'operador "??" retorna el primer argument quan aquest no és null ni undefined. En cas contrari, retorna el segon argument. https://es.javascript.info/nullish-coalescing-operator
+
+4. Suposem que tenim tres variables per guardar els nom, el cognom i el "nickname" d'un usuari. Ara bé, no estem segurs que tinguem tota aquesta informació. Només sabem que com a mínim en tenim una d'aquestes i que volem mostrar a alerta seguint la següent prioritat:
+   nom --> cognom --> nickName --> 'anònim'
+   Escriu el codi que ens ho soluciona fent ús de "??".
 
 ### Exercici 5: Funcions - Fonaments
 
@@ -154,109 +204,59 @@ function checkAge(age) {
 Escriu la funció de dalt, però aquest cop fent servir un operador `?`.
 També ho podem fer fent servir l'operador `||`. Inclus més curt. Investiga com fer-ho.
 
-```javascript
-function checkAge(age) {
-  return age > 18 ? true : confirm('¿Tus padres te lo permitieron?');
-}
-```
-
-```javascript
-function checkAge(age) {
-  return age > 18 || confirm('¿Tus padres te lo permitieron?');
-}
-```
-
 #### Exercici 5.3 - Variables globals i locals
 
-```javascript
-let MAX_PRICE = 10;
+Declara una variable global anomenada MAX_PRICE i establix el seu valor a 10.
 
-function calculaTotal(preu, quantitat) {
-  let total = preu * quantitat;
+Defineix la funció calculaTotal. Dins de la funció, declara una variable local anomenada total i establix el seu valor com a preu \* quantitat.
 
-  if (preu <= MAX_PRICE) {
-    return total;
-  } else {
-    return 'Error: El preu és més gran que el preu màxim permès.';
-  }
-}
-```
+Utilitza una declaració if per comprovar si el preu és menor o igual a MAX_PRICE. Si ho és, retorna el valor de total. Si no ho és, retorna un missatge d'error.
 
-console.log(calculaTotal(5, 2)); // Output: 10
-console.log(calculaTotal(12, 3)); // Output: "Error: El preu és més gran que el preu màxim permès."
-
-#### Exercici 5.4 -
+Prova la teva funció cridant-la amb diferents valors per al preu i la quantitat, i assegura't que retorni el resultat correcte o el missatge d'error.
 
 ### Exercici 6: Funcions - Arrow Functions
 
-Passa aquestes funcions a **Arrow Functions**.
-
 ```javascript
-// Function to arrow function
-function multiply(a, b) {
+// Arrow function
+const multiply = (a, b) => {
   const result = a * b;
   return result;
-}
-```
+};
 
-```javascript
-// Function to arrow function
-function calculateTotal(price, quantity) {
+// Arrow function
+const calculateTotal = (price, quantity) => {
   let total = price * quantity;
 
-  if (price > 10) {
-    total = total * 0.9;
-  }
+  if (price > 10) total = total * 0.9;
 
   return total;
-}
-```
+};
 
-```javascript
-function outerFunction(a, b) {
-  function innerFunction(c, d) {
-    return c * d;
-  }
-
+// Arrow function
+const outerFunction = (a, b) => {
+  const innerFunction = (c, d) => c * d;
   let result = innerFunction(a, b);
   return result + 10;
-}
-```
+};
 
-```javascript
-// Function to arrow function
-function calculateTotal(price, quantity) {
+// Arrow function
+const calculateTotal = (price, quantity) => {
   let total = price * quantity;
 
-  if (price > 10) {
-    total = total * 0.9;
-  }
+  if (price > 10) total = total * 0.9;
 
   return total;
-}
-```
+};
 
-```javascript
-function outerFunction(a, b) {
-  function innerFunction(c, d) {
-    return c * d;
-  }
-
+// Arrow function
+const outerFunction = (a, b) => {
+  const innerFunction = (c, d) => c * d;
   let result = innerFunction(a, b);
   return result + 10;
-}
+};
 ```
 
-```javascript
-const numbers = [1, 2, 3, 4, 5];
-
-// Callback function to arrow function
-const doubledNumbers = numbers.map(function (number) {
-  return number * 2;
-});
-```
-
-Fes un cop d'ull al segúent codi. Què passa quan l'executes?
+Pel que fa al darrer cas:
 
 ```javascript
 const myObject = {
@@ -271,4 +271,31 @@ const myObject = {
 myObject.myMethod();
 ```
 
-Ara, fes el mateix però fent servir Arrow Functions. Què passa ara?
+En aquest exercici trobem el problema del **this** quan es fa servir una funció de callback dins d'un objecte. Notarem que la paraula clau this dins de la funció de callback no es refereix a l'objecte myObject com s'esperava, sinó que fa referència a l'objecte global Window. Això és degut a la forma en què es defineix la funció. D'aquesta manera es crea un nou àmbit de funció i this fa referència a l'objecte global (window). Aquesta és una de les raons per les quals es van introduir les funcions de fletxa.
+
+```javascript
+const myObject = {
+  myMethod: function () {
+    console.log(this); // Output: myObject
+    setTimeout(() => {
+      console.log(this); // Output: myObject
+    }, 1000);
+  },
+};
+
+myObject.myMethod();
+```
+
+Com ho hauríem de resoldre sense la funció de fletxa?
+
+```javascript
+const myObject = {
+  myMethod: function () {
+    console.log(this); // Output: myObject
+    const self = this;
+    setTimeout(function () {
+      console.log(self); // Output: myObject
+    }, 1000);
+  },
+};
+```
