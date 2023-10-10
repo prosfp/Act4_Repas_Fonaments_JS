@@ -288,19 +288,6 @@ function outerFunction(a, b) {
 ```
 
 ```javascript
-// Function to arrow function
-function calculateTotal(price, quantity) {
-  let total = price * quantity;
-
-  if (price > 10) {
-    total = total * 0.9;
-  }
-
-  return total;
-}
-```
-
-```javascript
 function outerFunction(a, b) {
   function innerFunction(c, d) {
     return c * d;
@@ -324,18 +311,23 @@ Fes un cop d'ull al segúent codi. Què passa quan l'executes?
 
 ```javascript
 const myObject = {
-  myMethod: function () {
-    console.log(this); // Output: myObject
-    setTimeout(function () {
-      console.log(this); // Output: Window
+  name: 'John',
+  sayHello: function () {
+    console.log(`Hello, my name is ${this.name}`);
+  },
+  sayHelloWithTimeout: function () {
+    setTimeout(() => {
+      console.log(`Hello, my name is ${this.name}`);
     }, 1000);
   },
 };
 
-myObject.myMethod();
+myObject.sayHello(); // Output: Hello, my name is John
+
+myObject.sayHelloWithTimeout(); // Output: Hello, my name is John (after a 1 second delay)
 ```
 
-Ara, fes el mateix però fent servir Arrow Functions. Què passa ara?
+Com expliquem el que succeeix en cada cas?
 
 ### Exercici 7: Funcions - Mètodes d'Objectes per defecte
 
