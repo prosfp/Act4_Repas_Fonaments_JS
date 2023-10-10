@@ -158,3 +158,15 @@ d = '5' > '15';
 3. **Classificar l'Edat:**
 
    Donada una edat, vols assignar una etiqueta que indiqui si és un "Nen", "Adolescent" o "Adult". Utilitza una expressió ternària per aconseguir-ho.
+
+!!! Info Operador Nullish Coalescing '??'
+
+      El resultat de l'expressió "a ?? b" és el següent:
+      - Si "a" està "definit", el resultat serà "a".
+      - Si "a" no està "definit", el resultat serà "b".
+
+      En altres paraules, l'operador "??" retorna el primer argument quan aquest no és null ni undefined. En cas contrari, retorna el segon argument. https://es.javascript.info/nullish-coalescing-operator
+
+4. Suposem que tenim una variable "preu" que pot ser null o undefined. Utilitza l'operador "??" per assignar-li un valor predeterminat de 0 si "preu" no està definit, o bé manté el seu valor actual si està definit. Escribe el codi JavaScript per aquesta tasca utilitzant l'operador "??".
+
+### Exercici 5: Condicionals - Switch
