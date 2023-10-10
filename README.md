@@ -84,3 +84,30 @@ d = '5' > '15'; // true    "5" és major que "15" en comparacions de cadena
 Els resultats es deriven de les regles de JavaScript per a les operacions entre cadenes i números, així com de les comparacions de cadenes. Per a les operacions d'addició (`+`), qualsevol operand de tipus cadena es converteix en cadena i es realitza una concatenació. Per a les operacions de resta (`-`) i multiplicació (`*`), JavaScript intenta convertir les cadenes en números, i si és possible, realitza l'operació numèrica.
 
 En les comparacions entre cadenes, JavaScript compara els valors llexicogràficament. En el cas de `"15" > "5"`, les cadenes es comparen caràcter a caràcter i `"5"` és major que `"15"` en aquesta comparació, ja que el caràcter `"5"` és major que el caràcter `"1"`.
+
+### Exercici 4: Condicionals - Ternaris
+
+Aquí tens les solucions per als exercicis de conversió de codi amb `if...else if` a expressions ternàries:
+
+1. **Convertir IF a Ternari:**
+
+   ```javascript
+   let hour = 12;
+   let greeting = hour < 12 ? 'Bon dia' : hour < 18 ? 'Bona tarda' : 'Bona nit';
+   ```
+
+2. **Classificar el Número:**
+
+   ```javascript
+   let num = -5;
+   let result = num > 0 ? 'Positiu' : num < 0 ? 'Negatiu' : 'Zero';
+   ```
+
+3. **Classificar l'Edat:**
+
+   ```javascript
+   let age = 25;
+   let label = age < 13 ? 'Nen' : age < 20 ? 'Adolescent' : 'Adult';
+   ```
+
+Aquestes solucions utilitzen expressions ternàries per aconseguir el mateix resultat que les declaracions `if...else if` dels exercicis originals. Això demostra com pots simplificar i fer més llegible el teu codi en situacions senzilles com aquestes utilitzant expressions ternàries.
