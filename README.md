@@ -1,33 +1,27 @@
-## Basic Boilerplate
+# Exercicis de Fonaments de JavaScript
 
-This is a basic boilerplate for a JavaScript project using npm.
+Aquest repositori conté diferents exercicis per a practicar els fonaments de JavaScript. Cada exercici es troba en una carpeta diferent dins de la carpeta `/src`.
 
-## Getting Started
+## Requisits
 
-To get started, clone this repository and install the dependencies:
+Aquest entorn es basa en el "boilerplate" que vam fer servir per l'anterior pràctica.Pots utilitzar NodeJS per veure el resultat dels teus exercicis o fer-ho a través del navegador.
 
-```bash
-git clone https://github.com/your-username/your-project.git
-cd your-project
-npm install
-```
-Usage
-To run the project, use the following command:
-    
-```bash
-    npm start
-```
+## Instruccions
 
-To run the tests, use the following command:
-        
-    ```bash
-        npm test
-    ``` 
+1. Clona aquest repositori a la teva màquina.
+2. Executa `npm install` per instal·lar les dependències.
+3. Si vols fer ús de NodeJS per executar el teu codi:
+   3.1 Navega fins a la carpeta de l'exercici que vulguis executar.
+   3.2. Executa el fitxer que hagis fet `exercici.js` amb Node.js per a veure el resultat de l'exercici.
 
-## Features
+### Exercici 1: Nivell de dificultat baix
 
-- Node: Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It allows developers to run JavaScript on the server-side, making it possible to build scalable and high-performance web applications.
-- Jest: Jest is a JavaScript testing framework that is used to test JavaScript code. It provides a simple and easy-to-use interface for writing tests and comes with built-in support for mocking, assertions, and code coverage.
-- ESLint: ESLint is a JavaScript linter that is used to enforce coding standards and best practices. It helps to identify and fix common errors and inconsistencies in code, making it easier to maintain and scale codebases.
-- Prettier: Prettier is a code formatter that is used to automatically format code according to a set of rules. It helps to ensure that code is consistent and easy to read, making it easier to collaborate on codebases.
+Descripció de l'exercici 1.
 
+### Exercici 2: Nivell de dificultat mitjà
+
+Descripció de l'exercici 2.
+
+### Exercici 3: Nivell de dificultat alt
+
+Descripció de l'exercici 3.
