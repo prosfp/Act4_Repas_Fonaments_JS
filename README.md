@@ -353,12 +353,6 @@ console.log(jsonStr);
 
 //--------------------------
 
-const obj = { name: 'John', age: 30 };
-const jsonStr = JSON.stringify(obj);
-console.log(jsonStr);
-
-//--------------------------
-
 const num = 42;
 const str = String(num);
 console.log(str);
