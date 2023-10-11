@@ -30,6 +30,8 @@ function myFunction() {
 }
 ```
 
+> ✅ Use strict no permet declarar variables sense utilitzar `var`, `let` o `const`.
+
 #### Exemple 2
 
 ```javascript
@@ -40,6 +42,10 @@ function myFunction() {
   return x * 2;
 }
 ```
+
+> ✅ Use strict no permet utilitzar la paraula clau `delete` per eliminar variables. Si podríem fer-la servir per eliminar propietats d'objectes.
+> Ex: `objecte = {a: 1, b: 2}; delete objecte.a;`
+> Tot i així no és una bona pràctica fer-ho. https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/delete
 
 ### Exercici 2: Treballant amb variables
 
@@ -62,6 +68,21 @@ let my-name;
 var mensaje = 'Hola';
 const BIRTHDAY = '18.04.1982';
 let num = 5;
+```
+
+> ✅ A continuació pots veure les respostes correctes:
+
+```javascript
+let message; // ✅
+const COLOR_RED = "#F00"; // ✅ És una bona pràctica utilitzar majúscules per a les constants sempre i quan coneixem el seu valor abans de la seva declaració (hard-coded)
+const pageLoadTime = // ✅  Encara no coneixem el seu valor.
+const myBirthday = '18.04.1982'; // ❌  Hauria de ser en majúscula ja que coneixem el seu valor abans de la seva declaració.
+let 1a; // ❌  No podem començar el nom d'una variable amb un número.
+let user = 'John', age = 25, message = 'Hola'; // ✅
+let my-name; // ❌  No podem utilitzar el caràcter "-" en el nom d'una variable.
+var mensaje = 'Hola'; // ❌  No utilitzem var.
+const BIRTHDAY = '18.04.1982'; // ✅  És una bona pràctica utilitzar majúscules per a les constants sempre i quan coneixem el seu valor abans de la seva declaració (hard-coded)
+let num = 5;  // ✅
 ```
 
 ### Exercici 3: Conversions de Tipus
@@ -104,6 +125,13 @@ let resultat = num1 + num2;
 alert('El resultat de la suma és: ' + resultat);
 ```
 
+> ✅ El prompt sempre retorna un string. Per tant, hem de convertir els valors a números abans de fer la suma. Ho podem aconseguir fent servir la funció `Number()`: https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Number
+>
+> ```javascript
+> let num1 = Number(prompt('Introdueix el primer número:'));
+> let num2 = Number(prompt('Introdueix el segon número:'));
+> ```
+
 #### Exercici 3.2:
 
 Realitza un petit codi que demani a l'usuari un número i mostri a través d'un alert si l'usuari ha introud ït un número parell o senar.
@@ -113,8 +141,17 @@ let entrada = prompt('Introdueix un número entre 1 i 100:');
 //...
 ```
 
-- Exercici 3.3:
-  A vegades hi ha comportaments que no son del tot "lògics". Fes un cop d'ull als següents exemples, prova'ls i intenta extreure'n conclusions del funcionament de JS:
+> ✅ Mateixa idea que en l'exercici anterior:
+>
+> ```javascript
+> let entrada = Number(prompt('Introdueix un número entre 1 i 100:'));
+> alert(entrada % 2 === 0 ? 'El número és parell' : 'El número és senar');
+> //...
+> ```
+
+#### Exercici 3.3:
+
+A vegades hi ha comportaments que no son del tot "lògics". Fes un cop d'ull als següents exemples, prova'ls i intenta extreure'n conclusions del funcionament de JS:
 
 ```javascript
 let a, b, c, d;
@@ -129,6 +166,25 @@ a = '15' > 5;
 b = 5 > '15';
 c = '15' > '5';
 d = '5' > '15';
+```
+
+> ✅ Els operadors aritmètics (+, -, \*, /) converteixen els valors a números. Per tant, aquestes operacions sempre retornen un número.
+
+```javascript
+let a, b, c, d;
+a = '5' + 5; // '55'
+b = 5 + '5'; // '55'
+c = '5' - 5; // 0
+d = '5' * '5'; // 25
+```
+
+> ✅ Els operadors de comparació (>, <, >=, <=) converteixen els valors a números. Per tant, aquestes operacions sempre retornen un boolean.
+
+```javascript
+a = '15' > 5; // true (compara els caràcters un a un)
+b = 5 > '15'; // false  (compara els caràcters un a un)
+c = '15' > '5'; // true (compara els caràcters un a un)
+d = '5' > '15'; // true (compara els caràcters un a un)
 ```
 
 ### Exercici 4: Condicionals - Ternaris
@@ -152,25 +208,50 @@ d = '5' > '15';
 
    La teva tasca és reescriure aquest codi utilitzant una expressió ternària i assignar el resultat a la variable `greeting`.
 
+   > ✅ La solució seria la següent:
+   >
+   > ```javascript
+   > let hour = 12;
+   > let greeting =
+   >   hour < 12 ? 'Bon dia' : hour < 18 ? 'Bona tarda' : 'Bona nit';
+   > ```
+
 2. **Classificar el Número:**
 
    Tens un número `num` i vols assignar la cadena 'Positiu' si és positiu, 'Negatiu' si és negatiu, i 'Zero' si és igual a zero. Utilitza una expressió ternària per aconseguir-ho.
+
+   > ✅ La solució seria la següent:
+   >
+   > ```javascript
+   > let num = 0;
+   > let resultat = num > 0 ? 'Positiu' : num < 0 ? 'Negatiu' : 'Zero';
+   > ```
 
 3. **Classificar l'Edat:**
 
    Donada una edat, vols assignar una etiqueta que indiqui si és un "Nen", "Adolescent" o "Adult". Utilitza una expressió ternària per aconseguir-ho.
 
-!!! Info Operador Nullish Coalescing '??'
+   > ✅ La solució seria la següent:
+   >
+   > ```javascript
+   > let age = 15;
+   > let resultat = age < 13 ? 'Nen' : age < 18 ? 'Adolescent' : 'Adult';
+   > ```
 
-      El resultat de l'expressió "a ?? b" és el següent:
-      - Si "a" està "definit", el resultat serà "a".
-      - Si "a" no està "definit", el resultat serà "b".
-
-      En altres paraules, l'operador "??" retorna el primer argument quan aquest no és null ni undefined. En cas contrari, retorna el segon argument. https://es.javascript.info/nullish-coalescing-operator
-
-4. Suposem que tenim tres variables per guardar els nom, el cognom i el "nickname" d'un usuari. Ara bé, no estem segurs que tinguem tota aquesta informació. Només sabem que com a mínim en tenim una d'aquestes i que volem mostrar a alerta seguint la següent prioritat:
+4. **Nullish coalescing operator**
+   Suposem que tenim tres variables per guardar els nom, el cognom i el "nickname" d'un usuari. Ara bé, no estem segurs que tinguem tota aquesta informació. Només sabem que com a mínim en tenim una d'aquestes i que volem mostrar a alerta seguint la següent prioritat:
    nom --> cognom --> nickName --> 'anònim'
    Escriu el codi que ens ho soluciona fent ús de "??".
+   > ✅ La solució seria la següent:
+   >
+   > ```javascript
+   > let nom = 'John';
+   > let cognom = 'Doe';
+   > let nickName = 'Johnny';
+   > alert(nom ?? cognom ?? nickName ?? 'anònim');
+   > ```
+   >
+   > ✅ Si no tinguéssim el nom, cognom ni nickName, el resultat seria 'anònim'.
 
 ### Exercici 5: Funcions - Fonaments
 
@@ -189,6 +270,20 @@ function checkAge(age) {
 
 Funcionarà el codi si borrem `else`? Per què?
 
+> ✅ La funció de dalt es pot simplificar de la següent manera:
+>
+> ```javascript
+> function checkAge(age) {
+>   if (age > 18) {
+>     return true;
+>   }
+>   // ...
+>   return confirm('¿Tus padres te permitieron?');
+> }
+> ```
+>
+> ✅ El return dins de la funció fa que la funció s'aturi i retorni el valor. Per tant, si la condició és certa, la funció s'atura i retorna true. Si la condició és falsa, la funció s'atura i retorna el resultat de la funció confirm.
+
 #### Exercici 5.2
 
 ```javascript
@@ -202,7 +297,26 @@ function checkAge(age) {
 ```
 
 Escriu la funció de dalt, però aquest cop fent servir un operador `?`.
+
+> ✅ La funció de dalt es pot simplificar de la següent manera:
+>
+> ```javascript
+> function checkAge(age) {
+>   return age > 18 ? true : confirm('¿Tienes permiso de tus padres?');
+> }
+> ```
+
 També ho podem fer fent servir l'operador `||`. Inclus més curt. Investiga com fer-ho.
+
+> ✅ La funció de dalt es pot simplificar de la següent manera:
+>
+> ```javascript
+> function checkAge(age) {
+>   return age > 18 || confirm('¿Tienes permiso de tus padres?');
+> }
+> ```
+>
+> ✅ L'operador `||` mira si la condició de l'esquerra és certa. Si ho és, retorna el valor de l'esquerra. Si no ho és, retorna el valor de la dreta. En aquest cas, si la condició és certa, retorna true. Si no ho és, retorna el resultat de la funció confirm. Sempre haurà de tenir una condició a l'esquerra i un valor a la dreta.
 
 #### Exercici 5.3 - Variables globals i locals
 
@@ -214,91 +328,121 @@ Utilitza una declaració if per comprovar si el preu és menor o igual a MAX_PRI
 
 Prova la teva funció cridant-la amb diferents valors per al preu i la quantitat, i assegura't que retorni el resultat correcte o el missatge d'error.
 
+> ✅ La funció de dalt es pot simplificar de la següent manera:
+>
+> ```javascript
+> const MAX_PRICE = 10;
+> function calculaTotal(preu, quantitat) {
+>   let total = preu * quantitat;
+>   if (preu <= MAX_PRICE) {
+>     return total;
+>   } else {
+>     return 'El preu és massa alt';
+>   }
+> }
+> ```
+>
+> ✅ La variable MAX_PRICE és una variable global. Això vol dir que es pot accedir a ella des de qualsevol lloc del nostre codi. En canvi, la variable total és una variable local. Això vol dir que només es pot accedir a ella des de dins de la funció.
+
 ### Exercici 6: Funcions - Arrow Functions
 
-```javascript
-// Arrow function
-const multiply = (a, b) => {
-  const result = a * b;
-  return result;
-};
+> ✅
+>
+> ```javascript
+> const multiply = (a, b) => a * b;
+> ```
+>
+> ✅
+>
+> ```javascript
+> const calculateTotal = (price, quantity) => {
+>   let total = price * quantity;
+>   if (price > 10) total = total * 0.9;
+>   return total;
+> };
+> ```
+>
+> ✅
+>
+> ```javascript
+> const outerFunction = (a, b) => {
+>   const innerFunction = (c, d) => c * d;
+>   return innerFunction(a, b) + 10;
+> };
+> ```
+>
+> ✅ En aquest cas com que les funcions originals son anònimes hem de crear una variable per a poder cridar-les amb arrow functions.
+> const numbers = [1, 2, 3, 4, 5];
 
-// Arrow function
-const calculateTotal = (price, quantity) => {
-  let total = price * quantity;
+// Callback function to arrow function
+const doubledNumbers = numbers.map(function (number) {
+return number \* 2;
+});
 
-  if (price > 10) total = total * 0.9;
-
-  return total;
-};
-
-// Arrow function
-const outerFunction = (a, b) => {
-  const innerFunction = (c, d) => c * d;
-  let result = innerFunction(a, b);
-  return result + 10;
-};
-
-// Arrow function
-const calculateTotal = (price, quantity) => {
-  let total = price * quantity;
-
-  if (price > 10) total = total * 0.9;
-
-  return total;
-};
-
-// Arrow function
-const outerFunction = (a, b) => {
-  const innerFunction = (c, d) => c * d;
-  let result = innerFunction(a, b);
-  return result + 10;
-};
-```
+> ✅ Arrow Function
+>
+> ```javascript
+> const numbers = [1, 2, 3, 4, 5];
+> const doubledNumbers = numbers.map((number) => number * 2);
+> ```
 
 Pel que fa al darrer cas:
 
+- Funció anònima:
+
 ```javascript
 const myObject = {
-  myMethod: function () {
-    console.log(this); // Output: myObject
-    setTimeout(function () {
-      console.log(this); // Output: Window
-    }, 1000);
-  },
+    name: name
+    sayHello() {
+      console.log(this.name); // Output: myObject
+    },
 };
 
 myObject.myMethod();
 ```
 
-En aquest exercici trobem el problema del **this** quan es fa servir una funció de callback dins d'un objecte. Notarem que la paraula clau this dins de la funció de callback no es refereix a l'objecte myObject com s'esperava, sinó que fa referència a l'objecte global Window. Això és degut a la forma en què es defineix la funció. D'aquesta manera es crea un nou àmbit de funció i this fa referència a l'objecte global (window). Aquesta és una de les raons per les quals es van introduir les funcions de fletxa.
+> ✅ Arrow Functions
+>
+> ```javascript
+> const myObject = {
+>     name: name
+>     sayHello: () => {
+>       console.log(this.name); // Output: Window
+>     },
+> };
+>
+> myObject.myMethod();
+> ```
 
-```javascript
-const myObject = {
-  myMethod: function () {
-    console.log(this); // Output: myObject
-    setTimeout(() => {
-      console.log(this); // Output: myObject
-    }, 1000);
-  },
-};
+> ✅ What happens here? The arrow function doesn’t have its own **this**. The this value of the enclosing lexical scope is used; arrow functions follow the normal variable lookup rules. So while searching for this which is not present in the current scope they end up finding this from its enclosing scope.
 
-myObject.myMethod();
-```
-
-Com ho hauríem de resoldre sense la funció de fletxa?
-
-```javascript
-const myObject = {
-  myMethod: function () {
-    console.log(this); // Output: myObject
-    const self = this;
-    setTimeout(function () {
-      console.log(self); // Output: myObject
-    }, 1000);
-  },
-};
-```
+> ✅ Arrow Functions
+>
+> ```javascript
+> const myObject(name) = {
+>   name: name,
+>   sayHello: function () {
+>      setTimeout(() => {
+>       console.log(this.name); // Output: John
+>     }, 1000);
+>   },
+> };
+> myObject.sayHello();
+> ```
+>
+> ✅ Arrow Functions
+>
+> ```javascript
+> const myObject(name) = {
+>   name: name,
+>   sayHello: () => {
+>      setTimeout(() => {
+>       console.log(this.name); // Output: John
+>     }, 1000);
+>   },
+> };
+> myObject.sayHello();
+> ```
 
 ### Exercici 8
 
