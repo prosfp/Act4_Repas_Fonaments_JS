@@ -86,7 +86,7 @@ L'operador `typeof` ens permet veure quin tipus està emmagatzemat en una variab
 
 Hi ha dues formes: `typeof x` o `typeof(x)`. Retorna una cadena amb el nom del tipus. Per exemple, "string".
 
-!!! Warning Pel valor `null`, retorna "object": això és un error en el llenguatge, en realitat no és un objecte.
+> 📌 Pel valor `null`, retorna "object": això és un error en el llenguatge, en realitat no és un objecte.
 
 D'altra banda, la majoria de vegades, els operadors i funcions converteixen automàticament els valors que els passen al tipus correcte. Això ho anomenem "Conversió de tipus". Per exemple `alert` fa la conversió de qualssevol valor a string per mostrar-ho. O els operadors aritmètics converteixen els valors a números.
 
@@ -160,7 +160,7 @@ d = '5' > '15';
 
    Donada una edat, vols assignar una etiqueta que indiqui si és un "Nen", "Adolescent" o "Adult". Utilitza una expressió ternària per aconseguir-ho.
 
-!!! Info Operador Nullish Coalescing '??'
+> 📌 Info Operador Nullish Coalescing '??'
 
       El resultat de l'expressió "a ?? b" és el següent:
       - Si "a" està "definit", el resultat serà "a".
@@ -216,7 +216,7 @@ Prova la teva funció cridant-la amb diferents valors per al preu i la quantitat
 
 ### Exercici 6: Funcions - Arrow Functions
 
-!!! info Arrow Functions
+> 📌 info Arrow Functions
 
       **Variant sense Corxetes:** Les funcions de flecha sense corxetes són útils per a operacions senzilles. El seu format és el següent:
 
