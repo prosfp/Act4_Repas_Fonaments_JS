@@ -160,7 +160,7 @@ d = '5' > '15';
 
    Donada una edat, vols assignar una etiqueta que indiqui si és un "Nen", "Adolescent" o "Adult". Utilitza una expressió ternària per aconseguir-ho.
 
-> 📌 Info Operador Nullish Coalescing '??'
+> 📌 Operador Nullish Coalescing '??'
 
       El resultat de l'expressió "a ?? b" és el següent:
       - Si "a" està "definit", el resultat serà "a".
@@ -218,40 +218,40 @@ Prova la teva funció cridant-la amb diferents valors per al preu i la quantitat
 
 > 📌 info Arrow Functions
 
-   **Variant sense Corxetes:** Les funcions de flecha sense corxetes són útils per a operacions senzilles. El seu format és el següent:
+**Variant sense Corxetes:** Les funcions de flecha sense corxetes són útils per a operacions senzilles. El seu format és el següent:
 
-      ```javascript
-      (...arguments) => expressió
-      ```
+```javascript
+(...arguments) => expressió;
+```
 
-      En aquest cas, el costat dret de la fletxa (`=>`) és una expressió i la funció avalua aquesta expressió i en retorna el resultat. Si només hi ha un argument, pots omitir els parèntesis. Exemple:
+En aquest cas, el costat dret de la fletxa (`=>`) és una expressió i la funció avalua aquesta expressió i en retorna el resultat. Si només hi ha un argument, pots omitir els parèntesis. Exemple:
 
-      ```javascript
-      const duplica = n => n * 2;
-      console.log(duplica(5)); // Hauria de mostrar 10
-      ```
-   
-   **Variant amb Claus:**
+```javascript
+const duplica = (n) => n * 2;
+console.log(duplica(5)); // Hauria de mostrar 10
+```
+
+**Variant amb Claus:**
 
       Les funcions de flecha amb claus són més adequades per a tasques que involucren més de una operació. El seu format és el següent:
 
-      ```javascript
-      (...arguments) => { bloc de codi }
-      ```
+```javascript
+    (...arguments) => { bloc de codi }
+```
 
-      En aquest cas, pots escriure diverses declaracions dins del bloc de codi i, si vols retornar un valor, cal que utilitzis la paraula clau `return`.Exemple:
+En aquest cas, pots escriure diverses declaracions dins del bloc de codi i, si vols retornar un valor, cal que utilitzis la paraula clau `return`.Exemple:
 
-      ```javascript
-      const sumaNombres = (nombres) => {
-      let suma = 0;
-      for (const nombre of nombres) {
-         suma += nombre;
-      }
-      return suma;
-      };
+```javascript
+const sumaNombres = (nombres) => {
+  let suma = 0;
+  for (const nombre of nombres) {
+    suma += nombre;
+  }
+  return suma;
+};
 
-      console.log(sumaNombres([1, 2, 3, 4, 5])); // Hauria de mostrar 15
-      ```
+console.log(sumaNombres([1, 2, 3, 4, 5])); // Hauria de mostrar 15
+```
 
 #### Passa aquestes funcions a **Arrow Functions**.
 
