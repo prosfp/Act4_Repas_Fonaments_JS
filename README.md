@@ -216,7 +216,7 @@ Prova la teva funció cridant-la amb diferents valors per al preu i la quantitat
 
 ### Exercici 6: Funcions - Arrow Functions
 
-> 📌 info Arrow Functions
+> 📌 Arrow Functions
 
 **Variant sense Corxetes:** Les funcions de flecha sense corxetes són útils per a operacions senzilles. El seu format és el següent:
 
