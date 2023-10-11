@@ -181,9 +181,9 @@ d = '5' * '5'; // 25
 > ✅ Els operadors de comparació (>, <, >=, <=) converteixen els valors a números. Per tant, aquestes operacions sempre retornen un boolean.
 
 ```javascript
-a = '15' > 5; // true (compara els caràcters un a un)
-b = 5 > '15'; // false  (compara els caràcters un a un)
-c = '15' > '5'; // true (compara els caràcters un a un)
+a = '15' > 5; // true (compara com si fossin números)
+b = 5 > '15'; // false  (compara com si fossin números)
+c = '15' > '5'; // false (compara els caràcters un a un)
 d = '5' > '15'; // true (compara els caràcters un a un)
 ```
 
