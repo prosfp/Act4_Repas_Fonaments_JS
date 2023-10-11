@@ -218,7 +218,7 @@ Prova la teva funció cridant-la amb diferents valors per al preu i la quantitat
 
 > 📌 info Arrow Functions
 
-      **Variant sense Corxetes:** Les funcions de flecha sense corxetes són útils per a operacions senzilles. El seu format és el següent:
+   **Variant sense Corxetes:** Les funcions de flecha sense corxetes són útils per a operacions senzilles. El seu format és el següent:
 
       ```javascript
       (...arguments) => expressió
@@ -230,8 +230,8 @@ Prova la teva funció cridant-la amb diferents valors per al preu i la quantitat
       const duplica = n => n * 2;
       console.log(duplica(5)); // Hauria de mostrar 10
       ```
-
-      **Variant amb Claus:**
+   
+   **Variant amb Claus:**
 
       Les funcions de flecha amb claus són més adequades per a tasques que involucren més de una operació. El seu format és el següent:
 
@@ -253,7 +253,7 @@ Prova la teva funció cridant-la amb diferents valors per al preu i la quantitat
       console.log(sumaNombres([1, 2, 3, 4, 5])); // Hauria de mostrar 15
       ```
 
-Passa aquestes funcions a **Arrow Functions**.
+#### Passa aquestes funcions a **Arrow Functions**.
 
 ```javascript
 // Function to arrow function
@@ -327,7 +327,7 @@ myObject.sayHello(); // Output: Hello, my name is John
 myObject.sayHelloWithTimeout(); // Output: Hello, my name is John (after a 1 second delay)
 ```
 
-Com expliquem el que succeeix en cada cas?
+#### Com expliquem el que succeeix en cada cas?
 
 ### Exercici 7: Funcions - Mètodes d'Objectes per defecte
 
@@ -376,9 +376,9 @@ console.log(timeStr);
 
 Existeixen dos operadors que ens poden ajudar a treballar amb arrays i objectes. L'operador **Rest** i l'operador **Spread**.
 
-L'operador de propagació (...) és una característica de JavaScript que permet expandir una expressió en lloc on es requereixen múltiples arguments o elements. Això pot ser útil per passar arguments a una funció, crear noves arrays o objectes, o combinar múltiples arrays o objectes.
+L'operador de propagació (...) és una característica de JavaScript que **permet expandir una expressió en lloc on es requereixen múltiples arguments o elements**. Això pot ser útil per **passar arguments a una funció, crear noves arrays o objectes, o combinar múltiples arrays o objectes**.
 
-- Exemple 1: Passar arguments a una funció
+#### Exemple 1: Passar arguments a una funció
 
 ```javascript
 function sum(a, b, c) {
@@ -392,7 +392,7 @@ const result = sum(...numbers);
 console.log(result); // Output: 6
 ```
 
-- Exemple 2: Crear una nova array
+#### Exemple 2: Crear una nova array
 
 ```javascript
 const numbers1 = [1, 2, 3];
@@ -403,7 +403,7 @@ const combinedNumbers = [...numbers1, ...numbers2];
 console.log(combinedNumbers); // Output: [1, 2, 3, 4, 5, 6]
 ```
 
-- Exemple 3: Crear un nou objecte
+#### Exemple 3: Crear un nou objecte
 
 ```javascript
 const person = { name: 'John', age: 30 };
@@ -414,9 +414,9 @@ const personWithAddress = { ...person, ...address };
 console.log(personWithAddress); // Output: { name: 'John', age: 30, city: 'Barcelona', country: 'Spain' }
 ```
 
-El Rest Operator és una característica de JavaScript que ens permet representar un nombre indefinit de paràmetres com un array. Això pot ser útil per passar arguments a una funció, o per desestructurar un array.
+El **Rest Operator** en canvi ens **permet representar un nombre indefinit de paràmetres com un array**. Això pot ser útil per **passar arguments a una funció, o per desestructurar un array**.
 
-- Exemple 1: Passar arguments a una funció
+#### Exemple 1: Passar arguments a una funció
 
 ```javascript
 function sum(...numbers) {
@@ -428,7 +428,7 @@ const result = sum(1, 2, 3, 4, 5);
 console.log(result); // Output: 15
 ```
 
-- Exemple 2: Desestructurar un array
+#### Exemple 2: Desestructurar un array
 
 ```javascript
 const numbers = [1, 2, 3, 4, 5];
@@ -440,7 +440,7 @@ console.log(second); // Output: 2
 console.log(others); // Output: [3, 4, 5]
 ```
 
-- Exemple 3: Desestructurar un objecte
+#### Exemple 3: Desestructurar un objecte
 
 ```javascript
 const person = { name: 'John', age: 30, city: 'Barcelona', country: 'Spain' };
