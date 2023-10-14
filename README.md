@@ -414,7 +414,7 @@ myObject.myMethod();
 > myObject.myMethod();
 > ```
 
-> ✅ What happens here? The arrow function doesn’t have its own **this**. The this value of the enclosing lexical scope is used; arrow functions follow the normal variable lookup rules. So while searching for this which is not present in the current scope they end up finding this from its enclosing scope.
+> ✅ Més endavant veurem amb més detall que està passant aqui. El **this** de les funcions fletxa no funciona com el que es crida en les funcions "habituals". En aquest s'utilitza sempre l'àmbit lèxic on s'ha cridat la funció que conté el this. És a dir, d'alguna manera fan referència a l'àmbit "pare" (enclosing scope) on s'ha cridat el **this** ja que no es genera un de nou en la creació de la funció. En aquest cas, com que la funció sayHello s'ha creat dins de l'objecte myObject i es fa servir la funció flexta, el **this** fa referència a l'objecte Window (l'àmbit global on s'ha creat l'objecte myObject).)
 
 > ✅ Arrow Functions
 >
@@ -430,19 +430,7 @@ myObject.myMethod();
 > myObject.sayHello();
 > ```
 >
-> ✅ Arrow Functions
->
-> ```javascript
-> const myObject(name) = {
->   name: name,
->   sayHello: () => {
->      setTimeout(() => {
->       console.log(this.name); // Output: John
->     }, 1000);
->   },
-> };
-> myObject.sayHello();
-> ```
+> ✅ En aquest exemple sí que tenim una funció externa que fa ús de la notació "function ()" i per tant genera un nou nivell. Com que aquesta s'ha creat a través del mètode say Hello, el **this** de la funció interna setTimout() fa referència a l'objecte myObject.
 
 ### Exercici 8
 
@@ -464,3 +452,8 @@ console.log(result1); // Output: 15
 console.log(result2); // Output: 15
 ``;
 ```
+
+> ✅ La funció sumWithRest fa servir el "rest operator" per a poder passar un nombre variable de paràmetres. Això vol dir que podem passar tants paràmetres com vulguem i LA FUNCIÓ ELS REBRÀ EN FORMA D'ARRAY. En aquest cas, la funció sumWithRest rebrà un array amb els valors [1, 2, 3, 4, 5]. Per això, quan fem el reduce, el primer paràmetre de la funció serà 0 i el segon serà l'array [1, 2, 3, 4, 5]. Per tant, el resultat serà 15.
+
+> ✅ La funció sumWithSpread fa servir el "spread operator" per a poder passar un array com a paràmetre. Això vol dir que podem passar un array i LA FUNCIÓ EL REBRÀ COM A UNA LLISTA DE PARÀMETRES.
+> En aquest cas, la funció sumWithSpread rebrà els valors 1, 2, 3, 4, 5. Per tant, quan fem el reduce, el primer paràmetre de la funció serà 0 i el segon serà 1. Per tant, el resultat serà 15.
