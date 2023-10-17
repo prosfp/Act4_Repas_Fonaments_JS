@@ -434,26 +434,19 @@ myObject.myMethod();
 
 ### Exercici 8
 
+> ✅ Per concatenar arrays podem fer servir l'operadors spread. Aquest operador ens permet extreure els valors d'un array i afegir-los a un altre array. En aquest cas, el resultat seria [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].
+
 ```javascript
-function sumWithRest(...numbers) {
-  return numbers.reduce((total, num) => total + num, 0);
-}
-
-function sumWithSpread(numbers) {
-  return numbers.reduce((total, num) => total + num, 0);
-}
-
-const numbers = [1, 2, 3, 4, 5];
-
-const result1 = sumWithRest(1, 2, 3, 4, 5);
-const result2 = sumWithSpread([...numbers]);
-
-console.log(result1); // Output: 15
-console.log(result2); // Output: 15
-``;
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [6, 7, 8, 9, 10];
+const array3 = [...array1, ...array2];
+console.log(array3);
 ```
 
-> ✅ La funció sumWithRest fa servir el "rest operator" per a poder passar un nombre variable de paràmetres. Això vol dir que podem passar tants paràmetres com vulguem i LA FUNCIÓ ELS REBRÀ EN FORMA D'ARRAY. En aquest cas, la funció sumWithRest rebrà un array amb els valors [1, 2, 3, 4, 5]. Per això, quan fem el reduce, el primer paràmetre de la funció serà 0 i el segon serà l'array [1, 2, 3, 4, 5]. Per tant, el resultat serà 15.
+> ✅ Podem fer servir l'operador Rest per desestructurar un array. Si tenim un array de 'x' valors i sabem que volem recuperar tots menys els dos primers:
 
-> ✅ La funció sumWithSpread fa servir el "spread operator" per a poder passar un array com a paràmetre. Això vol dir que podem passar un array i LA FUNCIÓ EL REBRÀ COM A UNA LLISTA DE PARÀMETRES.
-> En aquest cas, la funció sumWithSpread rebrà els valors 1, 2, 3, 4, 5. Per tant, quan fem el reduce, el primer paràmetre de la funció serà 0 i el segon serà 1. Per tant, el resultat serà 15.
+```javascript
+const array1 = [1, 2, 3, 4, 5];
+const [a, b, ...rest] = array1;
+console.log(rest); // [3, 4, 5]
+```
