@@ -316,16 +316,18 @@ const myObject = {
     console.log(`Hello, my name is ${this.name}`);
   },
   sayHelloWithTimeout: function () {
-    setTimeout(() => {
+    setTimeout(function () => {
       console.log(`Hello, my name is ${this.name}`);
     }, 1000);
   },
 };
 
-myObject.sayHello(); // Output: Hello, my name is John
+myObject.sayHello();
 
-myObject.sayHelloWithTimeout(); // Output: Hello, my name is John (after a 1 second delay)
+myObject.sayHelloWithTimeout();
 ```
+
+Canvia ara el mètode "sayHello" i la funció "setTimeout" per **Arrow Functions** i torna a executar el codi. Què passa ara? Intent esbrinar per què?
 
 #### Com expliquem el que succeeix en cada cas?
 
@@ -448,8 +450,26 @@ console.log(address); // Output: { city: 'Barcelona', country: 'Spain' }
 
 #### Prova-ho tu mateix
 
-1. Crea una funció que accepti un nombre variable d'arguments utilitzant el "rest operator". La funció ha de sumar tots els arguments i retornar el resultat.
+1. Escriu una funció a JS faci el mateix que això sense fer ús de concat:
 
-2. Crea una altra funció que accepti una array d'arguments utilitzant l'operador de propagació. La funció ha de sumar tots els elements de l'array i retornar el resultat.
+```javascript
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+const array3 = [7, 8, 9];
 
-3. Crida les dues funcions amb els mateixos arguments i comprova que els resultats són iguals.
+const result = concat(array1, array2, array3);
+```
+
+Has aplicat "spread" o "rest"?
+
+2. Fes un console-log de tots els paràmetres de l'array tret de "Oluwatobi" i "sofela".
+
+```javascript
+const [firstName, lastName, ...otherInfo] = [
+  'Oluwatobi',
+  'Sofela',
+  'CodeSweetly',
+  'Web Developer',
+  'Male',
+];
+```
