@@ -317,7 +317,7 @@ const myObject = {
     console.log(`Hello, my name is ${this.name}`);
   },
   sayHelloWithTimeout: function () {
-    setTimeout(function () => {
+    setTimeout(function () {
       console.log(`Hello, my name is ${this.name}`);
     }, 1000);
   },
