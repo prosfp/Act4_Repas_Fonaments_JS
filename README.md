@@ -254,7 +254,7 @@ const sumaNombres = (nombres) => {
 console.log(sumaNombres([1, 2, 3, 4, 5])); // Hauria de mostrar 15
 ```
 
-#### Passa aquestes funcions a **Arrow Functions**.
+### ET TOCA A TU! Passa aquestes funcions a **Arrow Functions**.
 
 ```javascript
 // Function to arrow function
