@@ -217,7 +217,7 @@ Prova la teva funció cridant-la amb diferents valors per al preu i la quantitat
 
 ### Exercici 6: Funcions - Arrow Functions
 
-> 📌 Arrow Functions
+📌 Info - Arrow Functions
 
 **Variant sense Corxetes:** Les funcions de flecha sense corxetes són útils per a operacions senzilles. El seu format és el següent:
 
@@ -234,7 +234,7 @@ console.log(duplica(5)); // Hauria de mostrar 10
 
 **Variant amb Claus:**
 
-      Les funcions de flecha amb claus són més adequades per a tasques que involucren més de una operació. El seu format és el següent:
+Les funcions de flecha amb claus són més adequades per a tasques que involucren més de una operació. El seu format és el següent:
 
 ```javascript
     (...arguments) => { bloc de codi }
