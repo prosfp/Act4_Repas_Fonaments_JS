@@ -373,7 +373,7 @@ console.log(timeStr);
 
 Existeixen dos operadors que ens poden ajudar a treballar amb arrays i objectes. L'operador **Rest** i l'operador **Spread**.
 
-L'operador**"Spread" o de propagació (...)** és una característica de JavaScript que **permet expandir una expressió en lloc on es requereixen múltiples arguments o elements**. Això pot ser útil per **passar arguments a una funció, crear noves arrays o objectes, o combinar múltiples arrays o objectes**.
+L'operador **"Spread" o de propagació (...)** és una característica de JavaScript que **permet expandir una expressió en lloc on es requereixen múltiples arguments o elements**. Això pot ser útil per **passar arguments a una funció, crear noves arrays o objectes, o combinar múltiples arrays o objectes**.
 
 #### Exemple 1: Passar arguments a una funció
 
